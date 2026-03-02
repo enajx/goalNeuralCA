@@ -1,0 +1,170 @@
+# Configuration file for pattern NCA training
+# task: "patterns_morphing"
+task: "patterns_translation" 
+# task: "patterns_translation_trajectory" 
+
+
+# target_patterns: "datasets/emojis/"
+# target_patterns: "datasets/haeckel/"
+# target_patterns: ["datasets/emojis/butterfly.png", "datasets/emojis/butterfly_b.png", "datasets/emojis/butterfly_c.png"]
+target_patterns: ["datasets/emojis/crab.png", "datasets/emojis/butterfly_b.png", "datasets/emojis/beetle.png"]
+# target_patterns: ["🦋"]
+# target_patterns: ["🥑"] 
+# target_patterns: ["🦋"] 
+# target_patterns: ["🦎"] 
+# target_patterns: ["🦎", "🦋", "🔥"] 
+# target_patterns: ["🦎", "🦋", "🔥"] 
+# target_patterns: ["🐼", "🐻"]  
+# target_patterns: ["🐼", "🐻", "🐸"]  
+# target_patterns: ["😍", "😂", "🐼", "🐻", "🐸"]  
+# target_patterns: ["😍", "🥑", "🦋","🐼", "🐻", "🦄","🔥", "🐸","🐰", "🦊"]  
+# target_patterns : ["😊", "😂", "🔥", "👍", "😍", "🎉", "🌟", "💯", "🚀", "🎵", "🌈", "⭐", "🌺", "🎨","🦄", "🍀", "🌙", "🌻", "🌊", "🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼", "🐨", "🐯","🦁", "🐮", "🐷", "🐸", "🐵", "🐒", "🐔", "🐧", "🐦", "🐤", "🍎", "🍌", "🍓", "🍇", "🍉","🍑", "🍒", "🥭", "🍍", "🥥", "🥝", "🍅", "🥑", "🥒", "🥕", "🌽", "🥔", "🍠", "🥐", "🌴", "😈", "🖤", "🤘", "🍬","🦋"]
+
+
+# batch_size: 2 # for translation, make it a multiple of len(target_patterns) #!
+batch_size: 128 # for translation, make it a multiple of len(target_patterns) #!
+transformation_amount: 1  # Amount of transformation: pixels for translation, degrees for rotation
+# num_samples_per_transformation: 2  # Number of random starting positions for translation task
+num_samples_per_transformation: 128  # Number of random starting positions for translation task
+# num_samples_per_transformation: 256  # Number of random starting positions for translation task
+# pattern_size: 16  
+# space_size: 24  
+# pattern_size: 32 
+pattern_size: 48
+# space_size: 42
+# space_size: 48
+space_size: 64
+# pattern_size: 64
+# space_size: 72  
+# space_size: 129 
+embedding_dim: 4
+extra_channels: 0
+seed_type: null # only used for patterns_morphing task
+# domain_noise: 0.0 
+domain_noise: 0.05 #!
+# domain_noise: 0.1
+# domain_noise: 0.2
+space_size_eval: 70
+
+# Model architecture
+num_output_conv_features: null  # null for share_kernels_across_channels mode
+num_conv_layers: 1
+# hidden_dim_mlp: [32,128,32]
+hidden_dim_mlp: [64,1024,32]  
+# hidden_dim_mlp: [64,1024,1024,32]  
+# hidden_dim_mlp: [256]
+# hidden_dim_mlp: [512]
+# hidden_dim_mlp: [128]  
+# hidden_dim_mlp: [256,64]  
+# hidden_dim_mlp: [512,512,512]  
+# hidden_dim_mlp: [64,512,8]  
+# hidden_dim_mlp: [64,1024,128,8]  
+# hidden_dim_mlp: [64,512,64]  
+# hidden_dim_mlp: [64,1024,512,64]  
+# hidden_dim_mlp: [512,512]  
+# hidden_dim_mlp: [512,256]  
+# hidden_dim_mlp: [256,256,256]  
+bias: false
+dropout: 0.0
+
+# Activation functions
+# activation_conv: identity
+activation_conv: leaky_relu
+activation_fc: leaky_relu
+# activation_conv: tanh
+# activation_fc: tanh
+activation_last: identity
+state_norm: true
+
+# # Convolution settings
+convolution_mode: "share_kernels_across_channels"  # "mixjing_features", "one_kernel_per_channel", "share_kernels_across_channels"
+fixed_kernels: False  # false to learn kernels
+num_kernels: 12  # Required for share_kernels_across_channels when not fixed
+custom_kernels: null
+width_kernel: 3  # Required when fixed_kernels is false
+
+# # Convolution settings
+# convolution_mode: "share_kernels_across_channels"  # "mixing_features", "one_kernel_per_channel", "share_kernels_across_channels"
+# fixed_kernels: True  # false to learn kernels
+# num_kernels: null  # Required for share_kernels_across_channels when not fixed
+# custom_kernels: null
+# width_kernel: null  # Required when fixed_kernels is false
+
+boundary_condition: "zeros"  # "zeros", "circular", "reflect", "replicate" - when not "circular", patterns placed 1.5x pattern_size from edges
+# boundary_condition: "circular"  # "zeros", "circular", "reflect", "replicate"
+
+
+# NCA dynamics
+nca_steps: 3
+# nca_steps: 5
+# nca_steps: [20, 40]  # Can be a single int or a tuple/list [min, max] for random sampling
+additive_update: true
+# additive_update: false
+# update_noise: 0.0 #!
+update_noise: 0.01
+# update_noise: 0.05
+# update_noise: 0.1
+
+stochastic_update_ratio: 1
+alive_mask_goal: true
+alive_mask: true
+alive_threshold: 0.1
+
+# Task encoding
+use_one_hot_encoder: true
+external_encoder_dim: null
+activation_encoder: identity  # Activation function for the external encoder layer
+
+
+merge_ext: false  # Boolean: true for merge, false for concatenate
+
+# Training parameters
+# num_epochs: 10
+# num_epochs: 200
+# num_epochs: 1000
+# num_epochs: 2000  
+num_epochs: 5000
+# num_epochs: 10000
+# num_epochs: 20000
+dtype: "float32"  
+# dtype: "float64"  
+# lr: 0.005
+# lr: 0.001
+lr: 0.0005
+use_lr_scheduler: true
+lr_scheduler_patience: 200  # Number of epochs to wait before reducing LR
+lr_scheduler_factor: 0.9    # Factor to reduce LR by (20% reduction = 0.8)
+lr_scheduler_threshold: 0.00001  # Minimum change to qualify as improvement
+lr_scheduler_min_lr: 0.00001    # Minimum learning rate
+
+# Data augmentation
+augmentation: false
+noise_task_dim: 0
+emb_model_image: null
+seed_mode: "fixed"
+
+# Experiment tracking
+wandb_mode: "online"  # "offline", "online", "disabled"
+# wandb_mode: "offline"  # "offline", "online", "disabled"
+project_name: "goalNCA"
+run_name: null
+entity: "enajx"
+log_params: "all"  # "gradients", "all", "none"
+log_freq: 100
+
+# Checkpointing and saving
+checkpoint: null
+saving_path: "results"
+
+# Random seed
+seed: null
+
+# New parameters 
+isotropic_only: true
+extra_kernels: false
+morphogen_field_type: null
+betas: [0.9, 0.999] # default: [0.9, 0.999] 
+# pattern_identifiers_eval: null
+# pattern_identifiers_eval: ["🦎"]
+pattern_identifiers_eval: ["🦎", "🦋","🦞"]
+steps_checksum_eval: 5

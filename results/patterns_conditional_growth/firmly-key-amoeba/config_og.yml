@@ -1,0 +1,246 @@
+# Configuration file for pattern NCA training
+task: "patterns_conditional_growth"
+# task: "patterns_morphing"
+# task: "patterns_translation"
+
+# target_patterns: Can be either:
+#   - Folder path (ending with /): "datasets/emojis/"
+#   - List of PNG paths: ["path/image1.png", "path/image2.png"]
+#   - List of pattern unicode: ["🦋", "⭐", "🌸"]
+
+target_patterns: "datasets/emojis/"
+# target_patterns: "datasets/single_emojis_wFields/beetle/"
+# target_patterns: ["🦋", "👐", "🪲", "🌸", "🌼", "🐛", "🦀","😍", "🥑", "🦋","🐼", "🐻", "🦄","🔥", "🐸","🐰", "🦊","🍀", "🌙", "🌻"]
+# target_patterns: "datasets/haeckel/"
+# target_patterns: ["datasets/emojis/butterfly_b.png"]
+# target_patterns: ["datasets/emojis/bug.png", "datasets/emojis/star.png", "datasets/emojis/microbe.png"]
+# target_patterns: ["🦋"]
+# target_patterns: [ "⭐"]
+# target_patterns: [ "🌸"]
+# target_patterns: ["🌸","⭐"]
+# target_patterns: ["🌸","⭐","🌼"]
+# target_patterns: ["🕸️", "🌼", "⭐", "❄️", "🌸"]
+# target_patterns: ["🍀", "🏵️"]
+# target_patterns: ["🥑"]
+# target_patterns: ["❌"]
+# target_patterns: ["🦎"]
+# target_patterns: [ "🪲","🦋", "🐼", "🦀", "🦞"]
+# target_patterns: ["🐼", "🐻"]
+# target_patterns: ["🐼"]
+# target_patterns: ["🐼", "🐻", "🐸", "🐰", "🦊",]
+# target_patterns: ["🐼", "🐻", "🦊","🦎", "🦋"]
+# target_patterns: ["😍", "😂", "🐼", "🐻", "🐸"]
+# target_patterns: ["😍", "🥑", "🦋","🐼", "🐻", "🦄","🔥", "🐸","🐰", "🦊"]
+# target_patterns: ["😊", "😂", "🔥", "👍", "😍", "🎉", "🌟", "💯", "🚀", "🎵", "🌈", "⭐", "🌺", "🎨","🦄", "🍀", "🌙", "🌻", "🌊", "🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼", "🐨", "🐯","🦁", "🐮", "🐷", "🐸", "🐵", "🐒", "🐔", "🐧", "🐦", "🐤", "🍎", "🍌", "🍓", "🍇", "🍉","🍑", "🍒", "🥭", "🍍", "🥥", "🥝", "🍅", "🥑", "🥒", "🥕", "🌽", "🥔", "🍠", "🥐", "🌴", "😈", "🖤", "🤘", "🍬","🦋"]
+
+batch_size: 32 # for translation, make it a multiple of len(target_patterns) #!
+transformation_amount: 1  # Amount of transformation: pixels for translation, degrees for rotation
+num_samples_per_transformation: 32  # Creates a number of noisy variants per pattern for translation task
+# pattern_size: 16 
+# pattern_size: 24
+# pattern_size: 32 
+# pattern_size: 48
+pattern_size: 64
+# space_size: 24 # not affecting growing task  
+# space_size: 32 # not affecting growing task  
+# space_size: 42 # not affecting growing task  
+# space_size: 48 # not affecting growing task  
+space_size: 64 # not affecting growing task  
+embedding_dim: 4
+# extra_channels: 0
+# extra_channels: 16
+# extra_channels: 32
+extra_channels: 48
+# extra_channels: 64
+# seed_type: "zeros" 
+# seed_type: "single_cell_ones_all" 
+seed_type: "single_cell_RGB_ones_OG" 
+# seed_type: "single_cell_RGB_ones_OG_reversed" 
+# seed_type: "double_cell_RGB_ones_all" 
+# seed_type: "double_cell_RGB_ones_OG" 
+# seed_type: "double_cell_RGB_ones_OG_reversed" 
+domain_noise: 0.0 #!
+# domain_noise: 0.05
+# domain_noise: 0.1
+# domain_noise: 0.2
+# seed_positions: [[0.5, 0.5]]  # [x_frac, y_frac] position of the seed in the space
+seed_positions: null # [x_frac, y_frac] position of the seed in the space
+
+
+# Evaluation parameters
+space_size_eval: 70
+steps_checksum_eval: 16
+pattern_identifiers_eval: null
+# pattern_identifiers_eval: ["🦎", "🔥","😂"]
+# pattern_identifiers_eval: ["🦎"]
+pattern_identifiers_eval: null
+
+# Model architecture
+num_conv_layers: 1
+# hidden_dim_mlp: [128]  
+# hidden_dim_mlp: [256]  
+# hidden_dim_mlp: [512]  
+# hidden_dim_mlp: [32,128,32]  
+# hidden_dim_mlp: [32,256,32]  
+# hidden_dim_mlp: [256,48]  
+# hidden_dim_mlp: [64,256,48]  
+# hidden_dim_mlp: [256,64]  
+# hidden_dim_mlp: [512,512,512]  
+# hidden_dim_mlp: [64,256,8]  
+# hidden_dim_mlp: [64,1024,128,8]  
+# hidden_dim_mlp: [64,512,64]  
+# hidden_dim_mlp: [64,1024,1024,8]  
+# hidden_dim_mlp: [64,1024,512,64]  
+# hidden_dim_mlp: [64,512,32]  # good
+hidden_dim_mlp: [512,52]  # good
+# hidden_dim_mlp: [1024,52]  # good
+# hidden_dim_mlp: [64,1024,1024,8]  # good
+# hidden_dim_mlp: [64,1024,1024,64]  
+# hidden_dim_mlp: [512,512]  
+# hidden_dim_mlp: [512,256]  
+# hidden_dim_mlp: [256,256,256]  
+bias: false
+dropout: 0.0
+
+# Activation functions
+# activation_conv: identity
+activation_conv: leaky_relu
+activation_fc: leaky_relu
+# activation_conv: tanh
+# activation_fc: tanh
+# activation_conv: elu
+# activation_fc: elu
+activation_last: identity
+state_norm: true
+
+# # Convolution settings
+# convolution_mode: "mixing_features"  # "mixing_features", "one_kernel_per_channel", "share_kernels_across_channels"
+# fixed_kernels: False  # false to learn kernels
+# num_kernels: null  # Required for share_kernels_across_channels when not fixed
+# custom_kernels: null
+# width_kernel: 3  # Required when fixed_kernels is false
+# num_output_conv_features: 12  # null for share_kernels_across_channels mode
+
+# convolution_mode: "share_kernels_across_channels"  # "mixing_features", "one_kernel_per_channel", "share_kernels_across_channels"
+# fixed_kernels: False  # false to learn kernels
+# num_kernels: 16  # Required for share_kernels_across_channels when not fixed
+# custom_kernels: null
+# width_kernel: 3  # Required when fixed_kernels is false
+# num_output_conv_features: null  # null for share_kernels_across_channels mode
+# isotropic_only: false
+# extra_kernels: false
+
+
+# # Convolution settings
+convolution_mode: "share_kernels_across_channels"  # "mixing_features", "one_kernel_per_channel", "share_kernels_across_channels"
+fixed_kernels: true  # false to learn kernels
+num_kernels: null  # Required for share_kernels_across_channels when not fixed
+custom_kernels: null
+width_kernel: null  # Required when fixed_kernels is false
+num_output_conv_features: null  
+isotropic_only: false
+extra_kernels: false
+
+boundary_condition: "zeros"  # "zeros", "circular", "reflect", "replicate" - when not "circular", patterns placed 1.5x pattern_size from edges
+# boundary_condition: "circular"  # "zeros", "circular", "reflect", "replicate"
+
+
+# NCA dynamics
+# nca_steps: 3
+# nca_steps: 12
+# nca_steps: 16
+# nca_steps: 20
+# nca_steps: 24
+# nca_steps: 28
+# nca_steps: 32
+# nca_steps: 36
+# nca_steps: 48
+# nca_steps: 72
+# nca_steps: 100
+# nca_steps: [33, 64]  # Can be a single int or a tuple/list [min, max] for random sampling
+nca_steps: [36, 72]  # Can be a single int or a tuple/list [min, max] for random sampling
+# nca_steps: [28, 96]  # Can be a single int or a tuple/list [min, max] for random sampling
+additive_update: true
+# additive_update: false
+update_noise: 0.0 #!
+# update_noise: 0.01
+# update_noise: 0.1
+# loss_all_dev: false
+loss_all_dev: true
+loss_all_dev_min_t: 35
+
+stochastic_update_ratio: 1
+alive_mask_goal: true # Zero out external input vector goal in cells that aren't alive yet — computer at every step
+alive_mask: false # Zero out all cells that are not alive (below alive_threshold) at each NCA step
+# alive_mask: true # Zero out all cells that are not alive at each NCA step
+alive_threshold: 0.1
+
+# Task encoding
+use_one_hot_encoder: true
+external_encoder_dim: null
+activation_encoder: identity  # Activation function for the external encoder layer
+# no_task_encoder: true #! for unconditional growth (at least via task embedding)
+no_task_encoder: false #! 
+
+merge_ext: false  # Boolean: true for merge, false for concatenate
+
+# Morphogen fields (position fields) configuration
+morphogen_field_type: null  # "radial", "sinusoidal", "directional", "gaussian", "mix", null
+# morphogen_field_type: "gaussian"  # "radial", "sinusoidal", "directional", "gaussian", "mix", null
+# morphogen_field_type: "flower"  # "radial", "sinusoidal", "directional", "gaussian", "mix", null
+# morphogen_field_type: "directional"  # "radial", "sinusoidal", "directional", "gaussian", "mix", null
+channels_position_fields: 1  # Number of morphogen field channels
+freq_min: 1  # Minimum frequency for sinusoidal/radial fields
+freq_max: 3  # Maximum frequency for sinusoidal/radial fields
+sigma: 1  # Sigma parameter for gaussian fields
+same_direction_sin_fields: false  # For sinusoidal fields: true = all vary along x-axis, false = alternate x/y
+zero_low: true  # If true, field values range from 0 to 1, otherwise -1 to 1
+flower_k: 5  # Number of petals for flower fields
+flower_alpha: 1  # Size parameter for flower fields
+flower_phase: 30 # in degrees
+flower_filled: false
+
+# Training parameters
+# num_epochs: 20
+# num_epochs: 100
+# num_epochs: 1000
+# num_epochs: 2000  
+# num_epochs: 5000 # !
+# num_epochs: 10000
+num_epochs: 20000
+dtype: "float32"  
+# dtype: "float64"  
+# lr: 0.005
+lr: 0.001
+# lr: 0.0005
+# lr: 0.0001
+betas: [0.9, 0.999] # default: [0.9, 0.999] 
+# betas: [0.95, 0.999] # default: [0.9, 0.999]
+# betas: [0.99, 0.9999] # default: [0.9, 0.999]
+use_lr_scheduler: true
+lr_scheduler_patience: 500  # Number of epochs to wait before reducing LR
+lr_scheduler_factor: 0.9    # Factor to reduce LR by (20% reduction = 0.8)
+lr_scheduler_threshold: 0.00001  # Minimum change to qualify as improvement
+lr_scheduler_min_lr: 0.00001    # Minimum learning rate
+
+# Data augmentation
+augmentation: false
+noise_task_dim: 0
+emb_model_image: null
+seed_mode: "fixed"
+
+# Experiment tracking
+# wandb_mode: "disabled"  # "offline", "online", "disabled"
+wandb_mode: "online"  # "offline", "online", "disabled"
+project_name: "goalNCA"
+run_name: null
+entity: "enajx"
+log_params: "all"  # "gradients", "all", "none"
+log_freq: 100
+
+# Checkpointing and saving
+checkpoint: null
+saving_path: "results"
+
+# Random seed
+seed: null

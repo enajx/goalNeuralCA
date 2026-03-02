@@ -1,0 +1,273 @@
+n01_run0:
+  n: 1
+  patterns:
+  - datasets/emojis/butterfly_b.png
+  run_idx: 0
+  seed: 784820769
+n01_run1:
+  n: 1
+  patterns:
+  - datasets/emojis/squid.png
+  run_idx: 1
+  seed: 1415894410
+n01_run2:
+  n: 1
+  patterns:
+  - datasets/emojis/microbe.png
+  run_idx: 2
+  seed: 566040876
+n04_run0:
+  n: 4
+  patterns:
+  - datasets/emojis/microbe.png
+  - datasets/emojis/blossom_b.png
+  - datasets/emojis/blossom.png
+  - datasets/emojis/mushroom.png
+  run_idx: 0
+  seed: 1270924047
+n04_run1:
+  n: 4
+  patterns:
+  - datasets/emojis/beetle.png
+  - datasets/emojis/crab.png
+  - datasets/emojis/snowflake.png
+  - datasets/emojis/mushroom.png
+  run_idx: 1
+  seed: 379601707
+n04_run2:
+  n: 4
+  patterns:
+  - datasets/emojis/beetle.png
+  - datasets/emojis/butterfly_c.png
+  - datasets/emojis/lizard_b.png
+  - datasets/emojis/lady_beetle.png
+  run_idx: 2
+  seed: 343065430
+n08_run0:
+  n: 8
+  patterns:
+  - datasets/emojis/microbe.png
+  - datasets/emojis/butterfly.png
+  - datasets/emojis/blossom.png
+  - datasets/emojis/butterfly_b.png
+  - datasets/emojis/lady_beetle.png
+  - datasets/emojis/squid.png
+  - datasets/emojis/lizard.png
+  - datasets/emojis/lobster.png
+  run_idx: 0
+  seed: 955316783
+n08_run1:
+  n: 8
+  patterns:
+  - datasets/emojis/beetle.png
+  - datasets/emojis/maple_leaf.png
+  - datasets/emojis/lizard_b.png
+  - datasets/emojis/bug.png
+  - datasets/emojis/blossom.png
+  - datasets/emojis/butterfly_c.png
+  - datasets/emojis/butterfly.png
+  - datasets/emojis/squid.png
+  run_idx: 1
+  seed: 571214729
+n08_run2:
+  n: 8
+  patterns:
+  - datasets/emojis/beetle.png
+  - datasets/emojis/star.png
+  - datasets/emojis/butterfly.png
+  - datasets/emojis/lady_beetle.png
+  - datasets/emojis/crab.png
+  - datasets/emojis/butterfly_b.png
+  - datasets/emojis/blossom_b.png
+  - datasets/emojis/lobster.png
+  run_idx: 2
+  seed: 406497639
+n12_run0:
+  n: 12
+  patterns:
+  - datasets/emojis/beetle.png
+  - datasets/emojis/butterfly_c.png
+  - datasets/emojis/jellyfish.png
+  - datasets/emojis/star.png
+  - datasets/emojis/snowflake.png
+  - datasets/emojis/blossom.png
+  - datasets/emojis/mushroom.png
+  - datasets/emojis/microbe.png
+  - datasets/emojis/bug.png
+  - datasets/emojis/lobster.png
+  - datasets/emojis/cross.png
+  - datasets/emojis/butterfly.png
+  run_idx: 0
+  seed: 17295905
+n12_run1:
+  n: 12
+  patterns:
+  - datasets/emojis/blossom.png
+  - datasets/emojis/lizard_b.png
+  - datasets/emojis/butterfly_c.png
+  - datasets/emojis/blossom_b.png
+  - datasets/emojis/squid.png
+  - datasets/emojis/mushroom.png
+  - datasets/emojis/bug.png
+  - datasets/emojis/snowflake.png
+  - datasets/emojis/lizard.png
+  - datasets/emojis/cross.png
+  - datasets/emojis/crab.png
+  - datasets/emojis/butterfly_b.png
+  run_idx: 1
+  seed: 979604077
+n12_run2:
+  n: 12
+  patterns:
+  - datasets/emojis/snowflake.png
+  - datasets/emojis/squid.png
+  - datasets/emojis/lizard_b.png
+  - datasets/emojis/beetle.png
+  - datasets/emojis/butterfly_c.png
+  - datasets/emojis/crab.png
+  - datasets/emojis/lobster.png
+  - datasets/emojis/cross.png
+  - datasets/emojis/mushroom.png
+  - datasets/emojis/jellyfish.png
+  - datasets/emojis/star.png
+  - datasets/emojis/microbe.png
+  run_idx: 2
+  seed: 553717159
+n16_run0:
+  n: 16
+  patterns:
+  - datasets/emojis/butterfly_c.png
+  - datasets/emojis/crab.png
+  - datasets/emojis/bug.png
+  - datasets/emojis/butterfly.png
+  - datasets/emojis/beetle.png
+  - datasets/emojis/lady_beetle.png
+  - datasets/emojis/snowflake.png
+  - datasets/emojis/blossom_b.png
+  - datasets/emojis/jellyfish.png
+  - datasets/emojis/microbe.png
+  - datasets/emojis/blossom.png
+  - datasets/emojis/lizard_b.png
+  - datasets/emojis/maple_leaf.png
+  - datasets/emojis/butterfly_b.png
+  - datasets/emojis/cross.png
+  - datasets/emojis/lizard.png
+  run_idx: 0
+  seed: 1843535758
+n16_run1:
+  n: 16
+  patterns:
+  - datasets/emojis/butterfly_c.png
+  - datasets/emojis/bug.png
+  - datasets/emojis/mushroom.png
+  - datasets/emojis/cross.png
+  - datasets/emojis/beetle.png
+  - datasets/emojis/microbe.png
+  - datasets/emojis/lizard_b.png
+  - datasets/emojis/lobster.png
+  - datasets/emojis/jellyfish.png
+  - datasets/emojis/crab.png
+  - datasets/emojis/lady_beetle.png
+  - datasets/emojis/blossom_b.png
+  - datasets/emojis/butterfly.png
+  - datasets/emojis/blossom.png
+  - datasets/emojis/lizard.png
+  - datasets/emojis/snowflake.png
+  run_idx: 1
+  seed: 207139931
+n16_run2:
+  n: 16
+  patterns:
+  - datasets/emojis/beetle.png
+  - datasets/emojis/butterfly_c.png
+  - datasets/emojis/cross.png
+  - datasets/emojis/jellyfish.png
+  - datasets/emojis/maple_leaf.png
+  - datasets/emojis/crab.png
+  - datasets/emojis/blossom.png
+  - datasets/emojis/butterfly_b.png
+  - datasets/emojis/lady_beetle.png
+  - datasets/emojis/blossom_b.png
+  - datasets/emojis/bug.png
+  - datasets/emojis/squid.png
+  - datasets/emojis/mushroom.png
+  - datasets/emojis/lizard_b.png
+  - datasets/emojis/snowflake.png
+  - datasets/emojis/lizard.png
+  run_idx: 2
+  seed: 1823307874
+n20_run0:
+  n: 20
+  patterns:
+  - datasets/emojis/blossom_b.png
+  - datasets/emojis/lobster.png
+  - datasets/emojis/butterfly_b.png
+  - datasets/emojis/butterfly_c.png
+  - datasets/emojis/star.png
+  - datasets/emojis/crab.png
+  - datasets/emojis/beetle.png
+  - datasets/emojis/mushroom.png
+  - datasets/emojis/bug.png
+  - datasets/emojis/lady_beetle.png
+  - datasets/emojis/butterfly.png
+  - datasets/emojis/lizard.png
+  - datasets/emojis/snowflake.png
+  - datasets/emojis/squid.png
+  - datasets/emojis/cross.png
+  - datasets/emojis/blossom.png
+  - datasets/emojis/maple_leaf.png
+  - datasets/emojis/lizard_b.png
+  - datasets/emojis/jellyfish.png
+  - datasets/emojis/microbe.png
+  run_idx: 0
+  seed: 1591679067
+n20_run1:
+  n: 20
+  patterns:
+  - datasets/emojis/mushroom.png
+  - datasets/emojis/bug.png
+  - datasets/emojis/microbe.png
+  - datasets/emojis/maple_leaf.png
+  - datasets/emojis/blossom.png
+  - datasets/emojis/lizard_b.png
+  - datasets/emojis/jellyfish.png
+  - datasets/emojis/butterfly_b.png
+  - datasets/emojis/butterfly_c.png
+  - datasets/emojis/lady_beetle.png
+  - datasets/emojis/star.png
+  - datasets/emojis/snowflake.png
+  - datasets/emojis/lizard.png
+  - datasets/emojis/beetle.png
+  - datasets/emojis/cross.png
+  - datasets/emojis/lobster.png
+  - datasets/emojis/crab.png
+  - datasets/emojis/blossom_b.png
+  - datasets/emojis/squid.png
+  - datasets/emojis/butterfly.png
+  run_idx: 1
+  seed: 230298744
+n20_run2:
+  n: 20
+  patterns:
+  - datasets/emojis/lizard_b.png
+  - datasets/emojis/blossom_b.png
+  - datasets/emojis/lady_beetle.png
+  - datasets/emojis/jellyfish.png
+  - datasets/emojis/mushroom.png
+  - datasets/emojis/cross.png
+  - datasets/emojis/crab.png
+  - datasets/emojis/beetle.png
+  - datasets/emojis/maple_leaf.png
+  - datasets/emojis/lizard.png
+  - datasets/emojis/butterfly.png
+  - datasets/emojis/butterfly_b.png
+  - datasets/emojis/bug.png
+  - datasets/emojis/blossom.png
+  - datasets/emojis/lobster.png
+  - datasets/emojis/microbe.png
+  - datasets/emojis/squid.png
+  - datasets/emojis/butterfly_c.png
+  - datasets/emojis/snowflake.png
+  - datasets/emojis/star.png
+  run_idx: 2
+  seed: 1085662991

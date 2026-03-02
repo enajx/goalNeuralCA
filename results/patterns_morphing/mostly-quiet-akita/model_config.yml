@@ -1,0 +1,23 @@
+activation_conv: Identity
+activation_fc: LeakyReLU
+activation_last: Identity
+additive_update: true
+alive_mask_goal: true
+alive_threshold: 0.1
+bias: false
+boundary_condition: zeros
+convolution_mode: share_kernels_across_channels
+custom_kernels: null
+extra_kernels: false
+fixed_kernels: true
+hidden_dim_mlp:
+- 512
+isotropic_only: false
+merge_ext: false
+num_conv_layers: 1
+num_external_channels: 3
+num_input_channels: 20
+num_kernels: 7
+num_output_conv_features: null
+stochastic_update_ratio: 1
+width_kernel: null

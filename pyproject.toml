@@ -1,0 +1,34 @@
+[project]
+name = "goalNCA"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "beautifulsoup4>=4.13.3",
+    "celluloid>=0.2.0",
+    "datasets>=3.3.2",
+    "einops>=0.8.1",
+    "emoji>=2.14.1",
+    "gitpython>=3.1.44",
+    "h5py>=3.13.0",
+    "imageio[ffmpeg]>=2.37.0",
+    "ipykernel>=6.29.5",
+    "ipywidgets>=8.1.7",
+    "matplotlib>=3.10.1",
+    "numpy>=2.2.3",
+    "openai>=2.8.1",
+    "petname>=2.6",
+    "pillow>=11.1.0",
+    "scikit-image>=0.25.2",
+    "sentence-transformers>=3.4.1",
+    "torch>=2.6.0",
+    "torchvision>=0.21.0",
+    "tqdm>=4.67.1",
+    "transformers>=4.49.0",
+    "wandb>=0.19.8",
+]
+
+[tool.ruff.lint]
+select = ["E", "F"]
+ignore = ["F401", "F811", "E721", "E402", "E501", "F541", "F841", "E731"]

@@ -1,0 +1,9 @@
+animations: false
+base_config: config_growing.yml
+epochs: 2000
+experiment_id: '20260214_141942'
+nb_patterns_max: 20
+nb_patterns_step: 4
+pattern_pool_size: 20
+runs_per_n: 3
+target_patterns: datasets/emojis/
